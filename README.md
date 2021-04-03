@@ -1,5 +1,4 @@
 # Star Wars Characters Catalogue
-### VirtusLab - Frontend Intern recruitment task
-Solution by Mikołaj Marchewa
 
+#### Link [demo](https://happybutter.github.io/star-wars-character-catalogue/)
 
