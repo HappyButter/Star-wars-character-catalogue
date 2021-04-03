@@ -11,13 +11,23 @@ import { ListWrapper } from './characterList.css';
 import { Modal } from '../Modal';
 import { CharacterDetails } from '../CharacterDetails';
 
+function* idGenerator() {
+  let index = 0;
+
+  while (true) {
+    yield index++;
+  }
+};
+
+const generator = idGenerator();
 
 
-const CharacterList = ({ searchQuery, pageNumber, setPageNumber }) => {
+const CharacterList = ({ searchQuery, pageNumber, setPageNumber, filmList }) => {
   const [characters, setCharacters] = useState([]);
   const [hasMoreCharacters, setHasMoreCharacters] = useState(false);
 
-  const mapCharacter = (character, index) => {
+
+  const mapCharacter = (character) => {
     return {
       name: character.name,
       gender: character.gender,
@@ -27,7 +37,7 @@ const CharacterList = ({ searchQuery, pageNumber, setPageNumber }) => {
       skinColor: character.skin_color,
       height: character.height,
       filmList: character.films,
-      index,
+      index: generator.next().value,
     };
   };
 
@@ -39,9 +49,10 @@ const CharacterList = ({ searchQuery, pageNumber, setPageNumber }) => {
         params: { search: query, page: nextPage },
       });
 
-      const fetchedCharacters = data.results.map((character, index) =>
-        mapCharacter(character, index)
+      const fetchedCharacters = data.results.map((character) =>
+        mapCharacter(character)
       );
+
       setCharacters((prevCharacters) => [
         ...prevCharacters,
         ...fetchedCharacters,
@@ -70,20 +81,23 @@ const CharacterList = ({ searchQuery, pageNumber, setPageNumber }) => {
         next={() => getMoreCharacters(pageNumber, searchQuery)}
         hasMore={hasMoreCharacters}
         loader={<Loader />}>
-        {characters.map((character, index) => (
-          <CharacterListElement characterData={character} key={index} />
+        {characters.map((character) => (
+          <CharacterListElement
+            characterData={character}
+            key={character.index}
+          />
         ))}
       </InfiniteScroll>
 
       <Switch>
         <Route path="/characters/:index">
           <Modal>
-            <CharacterDetails characters={characters} />
+            <CharacterDetails characters={characters} filmList={filmList} />
           </Modal>
         </Route>
       </Switch>
     </ListWrapper>
   );
-};
+};;
 
 export default CharacterList;

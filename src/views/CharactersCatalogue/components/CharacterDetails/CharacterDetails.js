@@ -1,31 +1,28 @@
-import axios from 'axios';
+// import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { CharacterDetailsWrapper } from './characterDetails.css';
 
-const CharacterDetails = ({ characters }) => {
+
+const CharacterDetails = ({ characters, filmList }) => {
   const { index } = useParams();
   const [filmNames, setFilmNames] = useState([]);
 
-  const characterData = characters[index];
-  const filmLinksList = characterData.filmList;
+  const characterData = characters.find(character => character.index === Number(index));
 
-  const getFilmNames = async (filmLinksList) => {
-    for (const link of filmLinksList) {
-      axios(link)
-        .then((res) => {
-          setFilmNames((prevFilmNames) => [...prevFilmNames, res.data.title]);
-        })
-        .catch((e) => {
-          console.log(e);
-        });
-    }
+  const mapFilms = (characterData, filmList) => {
+    const filmsCharacterBeenIn = characterData.filmList.map(
+      (characterFilmURL) =>
+        filmList.find((film) => film.url === characterFilmURL)
+    );
+
+    setFilmNames(filmsCharacterBeenIn);
   };
 
   useEffect(() => {
-    getFilmNames(filmLinksList);
-  }, [filmLinksList]);
+    mapFilms(characterData, filmList);
+  }, []);
 
   return (
     <CharacterDetailsWrapper>
@@ -44,7 +41,7 @@ const CharacterDetails = ({ characters }) => {
       <h3 style={{ color: 'white' }}>Film lsit:</h3>
       <br />
       {filmNames.map((filmName, index) => (
-        <p key={index}>{filmName}</p>
+        <p key={index}>{filmName.title}</p>
       ))}
     </CharacterDetailsWrapper>
   );
