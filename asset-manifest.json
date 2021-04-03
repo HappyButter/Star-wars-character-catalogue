@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/star-wars-character-catalogue/static/js/main.e4097b1a.chunk.js",
-    "main.js.map": "/star-wars-character-catalogue/static/js/main.e4097b1a.chunk.js.map",
+    "main.js": "/star-wars-character-catalogue/static/js/main.eca313ab.chunk.js",
+    "main.js.map": "/star-wars-character-catalogue/static/js/main.eca313ab.chunk.js.map",
     "runtime-main.js": "/star-wars-character-catalogue/static/js/runtime-main.0be7c88e.js",
     "runtime-main.js.map": "/star-wars-character-catalogue/static/js/runtime-main.0be7c88e.js.map",
     "static/js/2.62181166.chunk.js": "/star-wars-character-catalogue/static/js/2.62181166.chunk.js",
@@ -20,6 +20,6 @@
   "entrypoints": [
     "static/js/runtime-main.0be7c88e.js",
     "static/js/3.22de262c.chunk.js",
-    "static/js/main.e4097b1a.chunk.js"
+    "static/js/main.eca313ab.chunk.js"
   ]
 }
