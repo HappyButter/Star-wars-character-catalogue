@@ -1,25 +1,25 @@
 {
   "files": {
-    "main.js": "/star-wars-character-catalogue/static/js/main.eca313ab.chunk.js",
-    "main.js.map": "/star-wars-character-catalogue/static/js/main.eca313ab.chunk.js.map",
-    "runtime-main.js": "/star-wars-character-catalogue/static/js/runtime-main.0be7c88e.js",
-    "runtime-main.js.map": "/star-wars-character-catalogue/static/js/runtime-main.0be7c88e.js.map",
-    "static/js/2.62181166.chunk.js": "/star-wars-character-catalogue/static/js/2.62181166.chunk.js",
-    "static/js/2.62181166.chunk.js.map": "/star-wars-character-catalogue/static/js/2.62181166.chunk.js.map",
+    "main.js": "/star-wars-character-catalogue/static/js/main.720af2d7.chunk.js",
+    "main.js.map": "/star-wars-character-catalogue/static/js/main.720af2d7.chunk.js.map",
+    "runtime-main.js": "/star-wars-character-catalogue/static/js/runtime-main.6ed28c3b.js",
+    "runtime-main.js.map": "/star-wars-character-catalogue/static/js/runtime-main.6ed28c3b.js.map",
+    "static/js/2.69971cd3.chunk.js": "/star-wars-character-catalogue/static/js/2.69971cd3.chunk.js",
+    "static/js/2.69971cd3.chunk.js.map": "/star-wars-character-catalogue/static/js/2.69971cd3.chunk.js.map",
     "static/js/3.22de262c.chunk.js": "/star-wars-character-catalogue/static/js/3.22de262c.chunk.js",
     "static/js/3.22de262c.chunk.js.map": "/star-wars-character-catalogue/static/js/3.22de262c.chunk.js.map",
-    "static/js/4.a3daba08.chunk.js": "/star-wars-character-catalogue/static/js/4.a3daba08.chunk.js",
-    "static/js/4.a3daba08.chunk.js.map": "/star-wars-character-catalogue/static/js/4.a3daba08.chunk.js.map",
-    "static/js/5.ff1192d8.chunk.js": "/star-wars-character-catalogue/static/js/5.ff1192d8.chunk.js",
-    "static/js/5.ff1192d8.chunk.js.map": "/star-wars-character-catalogue/static/js/5.ff1192d8.chunk.js.map",
+    "static/js/4.0bfb5b19.chunk.js": "/star-wars-character-catalogue/static/js/4.0bfb5b19.chunk.js",
+    "static/js/4.0bfb5b19.chunk.js.map": "/star-wars-character-catalogue/static/js/4.0bfb5b19.chunk.js.map",
+    "static/js/5.47c87014.chunk.js": "/star-wars-character-catalogue/static/js/5.47c87014.chunk.js",
+    "static/js/5.47c87014.chunk.js.map": "/star-wars-character-catalogue/static/js/5.47c87014.chunk.js.map",
     "index.html": "/star-wars-character-catalogue/index.html",
-    "static/js/2.62181166.chunk.js.LICENSE.txt": "/star-wars-character-catalogue/static/js/2.62181166.chunk.js.LICENSE.txt",
+    "static/js/2.69971cd3.chunk.js.LICENSE.txt": "/star-wars-character-catalogue/static/js/2.69971cd3.chunk.js.LICENSE.txt",
     "static/js/3.22de262c.chunk.js.LICENSE.txt": "/star-wars-character-catalogue/static/js/3.22de262c.chunk.js.LICENSE.txt",
     "static/media/logo.3bf2a05e.svg": "/star-wars-character-catalogue/static/media/logo.3bf2a05e.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.0be7c88e.js",
+    "static/js/runtime-main.6ed28c3b.js",
     "static/js/3.22de262c.chunk.js",
-    "static/js/main.eca313ab.chunk.js"
+    "static/js/main.720af2d7.chunk.js"
   ]
 }
