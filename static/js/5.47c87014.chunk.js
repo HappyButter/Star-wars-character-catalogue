@@ -1,2 +1,0 @@
-(this["webpackJsonpsw-characters-catalogue"]=this["webpackJsonpsw-characters-catalogue"]||[]).push([[5],{74:function(t,e,c){"use strict";c.r(e),c.d(e,"default",(function(){return s}));c(0);var n,r=c(4),a=c(5).b.div(n||(n=Object(r.a)(["\n  flex-grow: 1;\n  padding-top: calc(50vh - 200px);\n  text-align: center;\n"]))),o=c(1),s=function(){return Object(o.jsx)(a,{children:Object(o.jsx)("h1",{style:{color:"rgb(200,200,200)"},children:"\u201cDo. Or do not. There is no try.\u201d \u2013 Yoda"})})}}}]);
-//# sourceMappingURL=5.47c87014.chunk.js.map
