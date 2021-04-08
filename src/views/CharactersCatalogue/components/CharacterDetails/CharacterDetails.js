@@ -4,25 +4,28 @@ import { useParams } from 'react-router-dom';
 
 import { CharacterDetailsWrapper } from './characterDetails.css';
 
-
-const CharacterDetails = ({ characters, filmList }) => {
+const CharacterDetails = ({ characters, allFilmList }) => {
   const { index } = useParams();
-  const [filmNames, setFilmNames] = useState([]);
+  const [movieList, setMovieList] = useState([]);
 
-  const characterData = characters.find(character => character.index === Number(index));
+  const characterData = characters.find(
+    (character) => character.index === Number(index)
+  );
 
-  const mapFilms = (characterData, filmList) => {
+  const mapFilms = (characterData, allFilmList) => {
     const filmsCharacterBeenIn = characterData.filmList.map(
       (characterFilmURL) =>
-        filmList.find((film) => film.url === characterFilmURL)
+        allFilmList.find((film) => film.url === characterFilmURL)
     );
 
-    setFilmNames(filmsCharacterBeenIn);
+    setMovieList(filmsCharacterBeenIn || []);
   };
 
   useEffect(() => {
-    mapFilms(characterData, filmList);
-  }, []);
+    if (allFilmList) {
+      mapFilms(characterData, allFilmList);
+    }
+  }, [allFilmList]);
 
   return (
     <CharacterDetailsWrapper>
@@ -40,8 +43,8 @@ const CharacterDetails = ({ characters, filmList }) => {
       <br />
       <h3 style={{ color: 'white' }}>Film lsit:</h3>
       <br />
-      {filmNames.map((filmName, index) => (
-        <p key={index}>{filmName.title}</p>
+      {movieList.map((movie, index) => (
+        <p key={index}>{movie ? movie.title : ''}</p>
       ))}
     </CharacterDetailsWrapper>
   );

@@ -22,7 +22,7 @@ function* idGenerator() {
 const generator = idGenerator();
 
 
-const CharacterList = ({ searchQuery, pageNumber, setPageNumber, filmList }) => {
+const CharacterList = ({ searchQuery, pageNumber, setPageNumber, allFilmList }) => {
   const [characters, setCharacters] = useState([]);
   const [hasMoreCharacters, setHasMoreCharacters] = useState(false);
 
@@ -92,7 +92,7 @@ const CharacterList = ({ searchQuery, pageNumber, setPageNumber, filmList }) => 
       <Switch>
         <Route path="/characters/:index">
           <Modal>
-            <CharacterDetails characters={characters} filmList={filmList} />
+            <CharacterDetails characters={characters} allFilmList={allFilmList} />
           </Modal>
         </Route>
       </Switch>

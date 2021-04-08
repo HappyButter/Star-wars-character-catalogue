@@ -2,12 +2,9 @@ import React, { useState, useEffect, lazy, Suspense } from 'react';
 import axios from 'axios';
 import { Loader } from 'components';
 
-// import { CharacterList } from './components/CharacterList';
-// import { SearchBar } from './components/SearchBar';
-
-
 const CharacterList = lazy(() => import('./components/CharacterList'));
 const SearchBar = lazy(() => import('./components/SearchBar'));
+
 
 const CharactersCatalogue = () => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -57,7 +54,7 @@ const CharactersCatalogue = () => {
         searchQuery={searchQuery}
         pageNumber={pageNumber}
         setPageNumber={setPageNumber}
-        filmList={filmList}
+        allFilmList={filmList}
       />
     </Suspense>
   );
