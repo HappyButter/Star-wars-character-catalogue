@@ -1,31 +1,25 @@
-// import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { CharacterDetailsWrapper } from './characterDetails.css';
 
 const CharacterDetails = ({ characters, allFilmList }) => {
   const { index } = useParams();
-  const [movieList, setMovieList] = useState([]);
 
-  const characterData = characters.find(
-    (character) => character.index === Number(index)
+  const characterData = useMemo(
+    () => characters.find((character) => character.index === Number(index)),
+    [characters, index]
   );
 
-  const mapFilms = (characterData, allFilmList) => {
-    const filmsCharacterBeenIn = characterData.filmList.map(
-      (characterFilmURL) =>
-        allFilmList.find((film) => film.url === characterFilmURL)
-    );
-
-    setMovieList(filmsCharacterBeenIn || []);
-  };
-
-  useEffect(() => {
-    if (allFilmList) {
-      mapFilms(characterData, allFilmList);
-    }
-  }, [allFilmList]);
+  const movieList = useMemo(
+    () =>
+      allFilmList && characterData
+        ? characterData.filmList.map((characterFilmURL) =>
+            allFilmList.find((film) => film.url === characterFilmURL)
+          )
+        : [],
+    [allFilmList, characterData]
+  );
 
   return (
     <CharacterDetailsWrapper>

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { ReactComponent } from 'images/logo.svg';
+import { ReactComponent } from 'assets/images/logo.svg';
 
 export const Logo = styled(ReactComponent)`
   padding-bottom: 5px;

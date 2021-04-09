@@ -11,23 +11,16 @@ import { ListWrapper } from './characterList.css';
 import { Modal } from '../Modal';
 import { CharacterDetails } from '../CharacterDetails';
 
-function* idGenerator() {
-  let index = 0;
-
-  while (true) {
-    yield index++;
-  }
-};
-
-const generator = idGenerator();
-
-
-const CharacterList = ({ searchQuery, pageNumber, setPageNumber, allFilmList }) => {
+const CharacterList = ({
+  searchQuery,
+  pageNumber,
+  setPageNumber,
+  allFilmList,
+}) => {
   const [characters, setCharacters] = useState([]);
   const [hasMoreCharacters, setHasMoreCharacters] = useState(false);
 
-
-  const mapCharacter = (character) => {
+  const mapCharacter = (character, index) => {
     return {
       name: character.name,
       gender: character.gender,
@@ -37,21 +30,17 @@ const CharacterList = ({ searchQuery, pageNumber, setPageNumber, allFilmList }) 
       skinColor: character.skin_color,
       height: character.height,
       filmList: character.films,
-      index: generator.next().value,
+      index: characters.length + index,
     };
   };
 
   const getMoreCharacters = async (nextPage, query) => {
     try {
-      const { data } = await axios({
-        method: 'GET',
-        url: 'https://swapi.dev/api/people/',
+      const { data } = await axios.get('https://swapi.dev/api/people/', {
         params: { search: query, page: nextPage },
       });
 
-      const fetchedCharacters = data.results.map((character) =>
-        mapCharacter(character)
-      );
+      const fetchedCharacters = data.results.map(mapCharacter);
 
       setCharacters((prevCharacters) => [
         ...prevCharacters,
@@ -92,12 +81,15 @@ const CharacterList = ({ searchQuery, pageNumber, setPageNumber, allFilmList }) 
       <Switch>
         <Route path="/characters/:index">
           <Modal>
-            <CharacterDetails characters={characters} allFilmList={allFilmList} />
+            <CharacterDetails
+              characters={characters}
+              allFilmList={allFilmList}
+            />
           </Modal>
         </Route>
       </Switch>
     </ListWrapper>
   );
-};;
+};
 
 export default CharacterList;
