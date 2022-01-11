@@ -1,4 +1,4 @@
 # Star Wars Characters Catalogue
 
-#### Link [demo](https://happybutter.github.io/star-wars-character-catalogue/)
+#### Link [demo](https://happybutter.github.io/Star-wars-character-catalogue/)
 
